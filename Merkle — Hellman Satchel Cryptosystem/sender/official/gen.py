@@ -7,35 +7,27 @@ class Generation():
         """ """
         pass
 
-    def gen_seq(score_ver):
+    def gen_seq(self):
         """Generation of a super-growing sequence"""
-        sequence = list([1])
+        self.sequence = list([1])
 
-        for i in range(score_ver):
-            res = sum(sequence) + 3
-            sequence.append(res)
+        for i in range(self.score):
+            res = sum(self.sequence) + 3
+            self.sequence.append(res)
 
-        return sequence
+        return False #self.sequence
 
-    def test(sequence):
+    def test(self):
         """ """
         total = 0
-        result = 'Test succesful.'
-        for i in sequence:
-            """ """
+        for i in self.sequence:
             if i <= total:
                 raise ValueError('Test failed.')
 
-        return result
+        return self.sequence
 
-    def autotest():
-        """ """
-        pass
+obj = Generation(10)
+a = obj.gen_seq()
+print(obj.test())
+print(obj.gen_seq())
 
-
-obj = Generation
-a = obj.gen_seq(10)
-print(a)
-print(obj.test(a))
-
-print(Generation.gen_seq(10))
