@@ -19,8 +19,34 @@ def get_result(time):
         line_time.append(separation)
  
     #Step2.
-    result = set(line_time[0]).issuperset(line_time[1])
-    return result
+    #result = set(line_time[0]).issuperset(line_time[1])
+    line_time.sort()
 
-time = [ "12-14", "09-13"]
-print(get_result(time))
+
+
+
+    #return result
+
+
+def test_one():
+    time = ["09-13", "12-14"]
+    get_result(time)
+    assert get_result(time) == False, "Должно быть Ложно"
+   
+def test_two():
+    time = ["09-11", "12-14"]
+    get_result(time)
+    assert get_result(time) == True, "Должно быть Верно"
+
+def test_three():
+    time = ["09-10", "11", "12-14"]
+    get_result(time)
+    assert get_result(time) == True, "Должно быть Верно"
+
+if __name__ == "__main__":
+    test_one()
+    print("Test one done")
+    #test_two()
+    print("Test two done")
+    #test_three()
+    print("Test_three done")
